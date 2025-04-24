@@ -10,9 +10,9 @@ const direct = useNavigate();
       <img src={image} alt="" className="rounded-4xl"/>
 
       <div className="max-w-[30rem] xs:text-center lg:text-left">
-        <h1 className="text-3xl">Hello Im Jayvee Maniquiz</h1>
+        <h1 className="text-4xl">Hello Im Jayvee Maniquiz</h1>
         <div>
-        <p>
+        <p className="text-[1.1rem]">
           I want to become a software/cloud Engineer and the same time i want to be a professional musician. Currently im 4th year
           college at bulacan state University
         </p>

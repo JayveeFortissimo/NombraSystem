@@ -16,9 +16,9 @@ const Navbar = () => {
       <p className="text-2xl">Manemashima</p>
 
       <div className="flex gap-4 items-center sm:hidden md:flex xs:hidden">
-        <NavLink to="/" className={({isActive}) => isActive? "border-b border-amber-300": undefined} end>Home</NavLink>
-        <NavLink  to="about"  className={({ isActive }) => isActive ? "border-b border-amber-300" : undefined}>About</NavLink>
-        <p><CgProfile size={25} /></p>
+        <NavLink to="/" className={({isActive}) => isActive? "border-b border-blue-600": undefined} end>Home</NavLink>
+        <NavLink  to="about"  className={({ isActive }) => isActive ? "border-b border-blue-600" : undefined}>About</NavLink>
+        <NavLink to="login"><CgProfile size={25} /></NavLink>
       </div>
 
       <div className="flex flex-col gap-1 cursor-pointer md:hidden">

@@ -6,6 +6,7 @@ import {
   Homepages,
   AboutPage,
 } from "./utils/Pages";
+import AuthContext from "./providers/AuthContext";
 
 const App: React.FC = () => {
   const createRoutes = createBrowserRouter([
@@ -34,8 +35,10 @@ const App: React.FC = () => {
   ]);
 
   return (
-    <div className="font-roboto">
-      <RouterProvider router={createRoutes} />
+    <div className="font-roboto backgroundHomepage">
+      <AuthContext>
+        <RouterProvider router={createRoutes} />
+      </AuthContext>
     </div>
   );
 };

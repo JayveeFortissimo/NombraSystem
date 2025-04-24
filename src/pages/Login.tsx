@@ -11,7 +11,7 @@ const Login: React.FC = () => {
   return (
     <div className="min-h-[100vh] p-5 flex justify-center items-center">
       {!conditional.dontHaveAccount && (
-        <div className="h-auto w-[50rem] p-2 rounded shadow-2xl flex gap-5 xs:flex-wrap sm:flex-nowrap">
+        <div className="h-auto w-[50rem] p-2 rounded shadow-2xl flex gap-5 xs:flex-wrap sm:flex-nowrap bg-white">
           <img
             src={image}
             alt=""
@@ -19,7 +19,7 @@ const Login: React.FC = () => {
           />
 
           <div className="w-[100%] flex flex-col items-center justify-center gap-6">
-            <h1 className="text-2xl">Sign In</h1>
+            <h1 className="text-3xl">Sign In</h1>
             <form className="flex flex-col gap-6 w-[100%]">
               <div className="w-[100%]">
                 <p className=" mb-2">User Name</p>

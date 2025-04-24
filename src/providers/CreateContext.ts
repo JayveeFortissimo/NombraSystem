@@ -1,9 +1,8 @@
-import { useContext } from "react";
+import { createContext } from "react";
 
 
-type Profile = {
-    name: string;
-    email: string;
-  };
 
-export const profileContext = useContext<any>(null);
+const authContext =  createContext<any>(null);
+
+
+export {authContext}

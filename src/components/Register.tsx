@@ -1,4 +1,6 @@
 import image from "../assets/RR.png";
+import { useContext } from "react";
+import { authContext } from "../providers/CreateContext";
 
 interface prosLogin {
   seePassword: boolean;
@@ -6,16 +8,20 @@ interface prosLogin {
 }
 
 const Register: React.FC<prosLogin> = ({ seePassword, setConditional }) => {
+  const { register, HandleChange } = useContext(authContext);
+
   return (
-    <div className="h-auto w-[50rem] p-2 rounded shadow-2xl flex gap-5 xs:flex-wrap sm:flex-nowrap">
+    <div className="h-auto w-[50rem] p-2 rounded shadow-2xl flex gap-5 xs:flex-wrap sm:flex-nowrap bg-white">
       <div className="w-[100%] flex flex-col items-center justify-center gap-6">
-        <h1 className="text-2xl">Sign Up</h1>
+        <h1 className="text-3xl">Sign Up</h1>
         <form className="flex flex-col gap-2 w-[100%]">
           <div className="w-[100%]">
             <p className=" mb-2">User Name</p>
             <input
               type="text"
               className="border h-[2rem] pl-2 pr-2 w-[100%] rounded text-[0.8rem]"
+              value={register.userName}
+              onChange={(e) => HandleChange("userName", e.target.value)}
             />
           </div>
 
@@ -24,6 +30,8 @@ const Register: React.FC<prosLogin> = ({ seePassword, setConditional }) => {
             <input
               type="text"
               className="border h-[2rem] pl-2 pr-2 w-[100%] rounded text-[0.8rem]"
+              value={register.email}
+              onChange={(e) => HandleChange("email", e.target.value)}
             />
           </div>
 
@@ -32,6 +40,8 @@ const Register: React.FC<prosLogin> = ({ seePassword, setConditional }) => {
             <input
               type="text"
               className="border h-[2rem] pl-2 pr-2 w-[100%] rounded text-[0.8rem]"
+              value={register.address}
+              onChange={(e) => HandleChange("address", e.target.value)}
             />
           </div>
 
@@ -40,14 +50,18 @@ const Register: React.FC<prosLogin> = ({ seePassword, setConditional }) => {
             <input
               type={seePassword ? "text" : "password"}
               className="border h-[2rem] pl-2 pr-2 w-[100%] rounded text-[0.8rem]"
+              value={register.password}
+              onChange={(e) => HandleChange("password", e.target.value)}
             />
           </div>
 
           <div className="w-[100%]">
             <p className=" mb-2">Confirm Password</p>
             <input
-              type="text"
+              type={seePassword ? "text" : "password"}
               className="border h-[2rem] pl-2 pr-2 w-[100%] rounded text-[0.8rem]"
+              value={register.confirmation}
+              onChange={(e) => HandleChange("confirmation", e.target.value)}
             />
           </div>
 
